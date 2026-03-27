@@ -1,3 +1,16 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About the Chef",
+  description: "The story behind The Culinary Gallery — from the vibrant spice markets of Lagos to Michelin-starred European kitchens. Meet the alchemist of West African flavors.",
+  keywords: ["nigerian chef", "west african cuisine chef", "private chef lagos", "le cordon bleu chef", "nigerian gastronomy"],
+  openGraph: {
+    title: "About the Chef | The Culinary Gallery",
+    description: "From Lagos spice markets to Michelin-starred kitchens — the story of The Culinary Gallery's award-winning chef.",
+    images: [{ url: "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=2000", alt: "Professional chef portrait" }],
+  },
+};
+
 export default function About() {
   return (
     <>

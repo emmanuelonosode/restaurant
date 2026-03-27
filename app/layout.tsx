@@ -15,25 +15,26 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://theculinarygallery.example.com"),
   title: {
     template: "%s | The Culinary Gallery",
     default: "The Culinary Gallery | Modern Nigerian Cuisine",
   },
-  description: "Redefining modern Nigerian cuisine. Experience an elevated dining journey with our award-winning Chef.",
-  keywords: ["fine dining", "nigerian cuisine", "lagos restaurant", "gourmet", "culinary"],
+  description: "Redefining modern Nigerian cuisine. Experience an elevated private dining journey with our award-winning Chef — available for private dinners, events, and catering across Nigeria.",
+  keywords: ["fine dining", "nigerian cuisine", "lagos restaurant", "gourmet", "culinary", "private chef", "west african food", "catering nigeria"],
   openGraph: {
-    title: "The Culinary Gallery",
-    description: "Modern Nigerian Cuisine, Redefined.",
+    title: "The Culinary Gallery | Modern Nigerian Cuisine",
+    description: "West African gastronomy, redefined. Private dinners, events, and nationwide catering curated by an award-winning Nigerian chef.",
     url: "https://theculinarygallery.example.com",
     siteName: "The Culinary Gallery",
-    images: [{ url: "https://images.unsplash.com/photo-1414235077428-33898bd122e2?q=80&w=2000" }],
+    images: [{ url: "https://images.unsplash.com/photo-1414235077428-33898bd122e2?q=80&w=2000", width: 2000, height: 1333, alt: "Elegantly plated Nigerian cuisine" }],
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Culinary Gallery",
-    description: "Modern Nigerian Cuisine, Redefined.",
+    title: "The Culinary Gallery | Modern Nigerian Cuisine",
+    description: "West African gastronomy, redefined. Private dinners, events, and nationwide catering.",
     images: ["https://images.unsplash.com/photo-1414235077428-33898bd122e2?q=80&w=2000"],
   },
 };

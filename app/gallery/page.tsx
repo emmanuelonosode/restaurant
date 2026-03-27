@@ -1,24 +1,20 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "The Gallery",
+  description: "A curated visual exhibition of The Culinary Gallery's West African gastronomic art — from Pepper Soup and Efo Riro to plantain desserts and Jollof arancini.",
+  keywords: ["nigerian food photography", "west african plating", "fine dining food art", "jollof rice", "nigerian chef portfolio", "culinary photography"],
+  openGraph: {
+    title: "The Gallery | The Culinary Gallery",
+    description: "A curated exhibition of West African gastronomic art — heritage techniques meeting modern plating aesthetics.",
+    images: [{ url: "https://images.unsplash.com/photo-1544148103-0773bf10d330?q=80&w=2000", alt: "Elegantly plated Nigerian fine dining dish" }],
+  },
+};
+
 export default function Gallery() {
   return (
     <>
-      <style dangerouslySetInnerHTML={{__html: `
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        @media (min-width: 1024px) {
-            .gallery-grid {
-                grid-template-columns: repeat(12, 1fr);
-            }
-            .gallery-item-wide { grid-column: span 8; }
-            .gallery-item-tall { grid-column: span 4; grid-row: span 2; }
-            .gallery-item-square { grid-column: span 4; }
-        }
-      `}} />
-
-
-
       <main className="pt-32 pb-24">
         {/* Hero Title Section */}
         <header className="max-w-7xl mx-auto px-8 mb-20 text-center md:text-left">
@@ -30,7 +26,7 @@ export default function Gallery() {
               A curated exhibition of West African gastronomic art. Experience the intersection of heritage techniques and modern plating aesthetics.
             </p>
             {/* Filter Component */}
-            <div className="flex flex-wrap gap-4 md:gap-8 border-b border-outline-variant/30 pb-2">
+            <div className="flex flex-wrap gap-4 md:gap-8 border-b border-outline-variant/30 pb-2" role="group" aria-label="Filter by course">
               <button className="font-label text-xs uppercase tracking-[0.2em] text-secondary font-bold border-b-2 border-secondary pb-2">All Creations</button>
               <button className="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors pb-2">Appetizers</button>
               <button className="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors pb-2">Main Course</button>
@@ -40,11 +36,11 @@ export default function Gallery() {
         </header>
 
         {/* Gallery Grid */}
-        <section className="max-w-7xl mx-auto px-8">
+        <section className="max-w-7xl mx-auto px-8" aria-label="Gallery of dishes">
           <div className="gallery-grid">
             {/* Item 1: Wide Hero */}
             <div className="gallery-item-wide group relative overflow-hidden rounded-xl bg-surface-container aspect-[16/9]">
-              <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Modern plated goat meat pepper soup with herb garnish" src="https://images.unsplash.com/photo-1544148103-0773bf10d330?q=80&w=1500&auto=format&fit=crop"/>
+              <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Modern plated goat meat pepper soup with herb garnish and aromatic broth" src="https://images.unsplash.com/photo-1544148103-0773bf10d330?q=80&w=1500&auto=format&fit=crop"/>
               <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                 <span className="font-label text-xs uppercase tracking-widest text-primary-fixed mb-2">Signature Main</span>
                 <h3 className="font-headline text-3xl text-on-primary mb-2">Clarified Goat Meat Pepper Soup</h3>
@@ -106,12 +102,12 @@ export default function Gallery() {
             <div className="md:w-1/2">
               <h2 className="font-headline text-4xl text-primary mb-6 leading-tight">Beyond the Plate: The Philosophy of West African Gastronomy</h2>
               <p className="font-body text-on-surface-variant leading-relaxed mb-8">
-                Our gallery isn't just a portfolio; it's a testament to the resilience and evolution of Nigerian cuisine. We source seasonally, respect ancestral techniques, and plate for the modern eye.
+                Our gallery isn&apos;t just a portfolio; it&apos;s a testament to the resilience and evolution of Nigerian cuisine. We source seasonally, respect ancestral techniques, and plate for the modern eye.
               </p>
-              <a className="inline-flex items-center gap-2 font-label text-xs uppercase tracking-widest text-secondary font-bold hover:gap-4 transition-all" href="/journal">
+              <Link className="inline-flex items-center gap-2 font-label text-xs uppercase tracking-widest text-secondary font-bold hover:gap-4 transition-all" href="/journal">
                 Read the Journal
                 <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
+              </Link>
             </div>
             <div className="md:w-1/3 aspect-[4/5] rounded-xl overflow-hidden shadow-2xl rotate-3">
               <img className="w-full h-full object-cover" alt="Close up of chef hands plating a dish with precision" src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=1500&auto=format&fit=crop"/>
@@ -119,8 +115,6 @@ export default function Gallery() {
           </div>
         </section>
       </main>
-
-
     </>
   );
 }
